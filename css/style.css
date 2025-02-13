@@ -1,0 +1,280 @@
+.support a:hover {
+    background: #fff !important; /* Ưu tiên cực cao */
+    color: #01a652 !important;   /* Ưu tiên cực cao */
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, .06) !important;
+}
+
+.action a:hover {
+    background: #fff !important; /* Ưu tiên cực cao */
+    color: #01a652 !important;   /* Ưu tiên cực cao */
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, .06) !important;
+}
+
+.tabs {
+    width: 80%;
+    margin: 0 auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tab-buttons {
+    display: flex;
+    background: #f1f1f1;
+    border-bottom: 1px solid #ddd;
+}
+
+.tab-button {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background: #f1f1f1;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+.tab-button.active {
+    background: #01a652;
+    color: #fff;
+}
+
+.tab-button:hover {
+    background: #01a652;
+    color: #fff;
+}
+
+.tab-content {
+    padding: 20px;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.reviews {
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.review-list {
+    margin-bottom: 20px;
+}
+
+.review-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.review-item:last-child {
+    border-bottom: none;
+}
+
+.review-avatar {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    font-size: 1.5em;
+    color: #666;
+}
+
+.review-content {
+    flex: 1;
+}
+
+.review-title {
+    font-weight: bold;
+    margin: 0;
+}
+
+.review-title a {
+    color: #01a652;
+    text-decoration: none;
+}
+
+.review-title a:hover {
+    text-decoration: underline;
+}
+
+.review-date {
+    font-size: 0.9em;
+    color: #666;
+    display: block;
+    margin: 5px 0;
+}
+
+.review-message {
+    font-size: 1em;
+    margin: 5px 0;
+}
+
+.add-review {
+    text-align: center;
+}
+
+.add-review button {
+    padding: 10px 20px;
+    background-color: #01a652;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease;
+}
+
+.add-review button:hover {
+    background-color: #007a42;
+}
+
+.add-review-form {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.add-review-form h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.add-review-form p {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.add-review-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-review-form input,
+.add-review-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.add-review-form textarea {
+    resize: none;
+}
+
+.rating {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+.rating span {
+    font-size: 1.5em;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.rating span.active {
+    color: #ffcc00;
+}
+
+.save-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.save-info label {
+    margin-left: 5px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+.add-review-form button {
+    padding: 10px 20px;
+    background-color: #01a652;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.add-review-form button:hover {
+    background-color: #007a42;
+}
+
+/* Hộp thông báo */
+.notification-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    max-width: 90%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+  }
+  
+  /* Nội dung thông báo */
+  .notification-content {
+    position: relative;
+  }
+  
+  /* Nút thoát "X" */
+  .close-btn {
+    position: absolute;
+    top: -55px;
+    right: -35px;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .close-btn:hover {
+    transform: scale(1.2);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Nội dung văn bản */
+  .notification-content p {
+    font-size: 1.5em;
+    color: #007a42;
+    margin: 20px 0;
+  }
+  
+  
