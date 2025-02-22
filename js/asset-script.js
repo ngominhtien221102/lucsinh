@@ -392,8 +392,8 @@
         /*-----------------------------------------------------------------*/
         // 
         $('.slider-for').slick({
-            nextArrow: '<span class="nextArrow"><i class="icon-right"></i></span>',
-            prevArrow: '<span class="prevArrow"><i class="icon-left"></i></span>',
+            nextArrow: '<span class="nextArrow"><i class="fas fa-arrow-right"></i></span>',
+            prevArrow: '<span class="prevArrow"><i class="fas fa-arrow-left"></i></span>',
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: true,
@@ -403,8 +403,8 @@
             asNavFor: '.slider-nav'
         });
         $('.slider-nav').slick({
-            nextArrow: '<span class="nextArrow"><i class="icon-right"></i></span>',
-            prevArrow: '<span class="prevArrow"><i class="icon-left"></i></span>',
+            nextArrow: '<span class="nextArrow"><i class="fas fa-arrow-right"></i></span>',
+            prevArrow: '<span class="prevArrow"><i class="fas fa-arrow-left"></i></span>',
             slidesToShow: 2,
             slidesToScroll: 1,
             asNavFor: '.slider-for',

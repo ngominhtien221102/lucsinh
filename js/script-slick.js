@@ -97,3 +97,20 @@
     ResSlickSlider();    
   });
 })(jQuery); 
+
+
+        function toggleChat() {
+            const chatWidget = document.getElementById('chatWidget');
+            if (chatWidget.style.display === 'none' || !chatWidget.style.display) {
+                chatWidget.style.display = 'block';
+            } else {
+                chatWidget.style.display = 'none';
+            }
+        }
+
+        function hideChatWidget() {
+          const chatWidget = document.getElementById("chatWidget");
+          if (chatWidget) {
+              chatWidget.style.display = "none";
+          }
+      }

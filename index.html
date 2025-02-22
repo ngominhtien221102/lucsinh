@@ -739,7 +739,10 @@
                                                         <div class="col-12 col-md-7">
                                                             <div class="content-custommer">
                                                                 <!-- <img class="icon1" src="/assets/img/icon4.svg" alt="icon"> -->
-                                                                <p>“Tôi trồng rau trong thùng xốp trên sân thượng, trước đây cây chậm lớn, lá vàng. Nhờ phân bón Lục Sinh, cây phát triển nhanh, rau xanh ngon, tiết kiệm được cả nước tưới và thời gian chăm sóc.” </p>
+                                                                <p>“Tôi trồng rau trong thùng xốp trên sân thượng, trước
+                                                                    đây cây chậm lớn, lá vàng. Nhờ phân bón Lục Sinh,
+                                                                    cây phát triển nhanh, rau xanh ngon, tiết kiệm được
+                                                                    cả nước tưới và thời gian chăm sóc.” </p>
                                                                 <h4>Cô Lan, Hà Nội</h4>
                                                                 <span></span>
                                                             </div>
@@ -758,7 +761,10 @@
                                                         <div class="col-12 col-md-7">
                                                             <div class="content-custommer">
                                                                 <!-- <img class="icon1" src="/assets/img/icon4.svg" alt="icon"> -->
-                                                                <p>“Mô hình vườn thẳng đứng trong nhà tôi trước đây thường gặp vấn đề về đất kém dinh dưỡng. Nhờ Lục Sinh, cây leo lên nhanh, rau sạch cung cấp đủ cho cả gia đình, vừa tiết kiệm, vừa an toàn.”</p>
+                                                                <p>“Mô hình vườn thẳng đứng trong nhà tôi trước đây
+                                                                    thường gặp vấn đề về đất kém dinh dưỡng. Nhờ Lục
+                                                                    Sinh, cây leo lên nhanh, rau sạch cung cấp đủ cho cả
+                                                                    gia đình, vừa tiết kiệm, vừa an toàn.”</p>
                                                                 <h4>Chú Hùng, Hà Nội</h4>
                                                             </div>
                                                         </div>
@@ -963,7 +969,7 @@
                                             <div class="btn_submit"><input type="submit" value="Gửi liên hệ"
                                                     class="wpcf7-form-control wpcf7-submit" /></div>
                                         </div>
-                                        <div class="wpcf7-response-output" inert="true"></div>
+                                        <div class="wpcf7-response-output" aria-hidden="true"></div>
                                     </form>
                                 </div>
                             </div>
@@ -1070,7 +1076,7 @@
     </div>
     <!--  -->
     <div class="sticky-cta">
-        <div id="back-top" href="javascript:void(0)"><i class="fa fa-arrow-up" inert="true"></i></div>
+        <div id="back-top" href="javascript:void(0)"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
     </div>
 
 
@@ -1121,7 +1127,6 @@
             background-color: rgb(49 163 100 / 70%);
             border-radius: 50%;
             border: 2px solid transparent;
-
         }
 
         .phone-vr-img-circle {
@@ -1146,8 +1151,8 @@
         }
 
         .phone-vr-img-circle img {
-            max-height: 25px;
-            max-width: 27px;
+            max-height: 30px;
+            max-width: 30px;
             position: absolute;
             top: 50%;
             left: 50%;
@@ -1303,8 +1308,16 @@
             cursor: pointer;
         }
     </style>
-    <div id="button-contact-vr" class="" inert="false">
+    <div id="button-contact-vr" class="" aria-hidden="false">
         <div id="gom-all-in-one">
+            <div id="phone-vr" class="button-contact" onclick="toggleChat()">
+                <div class="phone-vr">
+                    <div class="phone-vr-circle-fill"></div>
+                    <div class="phone-vr-img-circle">
+                        <img src="./image/chatbot.png">
+                    </div>
+                </div>
+            </div>
             <div id="zalo-vr" class="button-contact">
                 <div class="phone-vr">
                     <div class="phone-vr-circle-fill"></div>
@@ -1344,6 +1357,12 @@
         </div>
         <!-- end v3 class gom-all-in-one -->
     </div>
+
+    <div id="chatWidget">
+        <i class="fa fa-times close-icon" onclick="hideChatWidget()"></i>
+        <iframe src="./chat.html"></iframe>
+    </div>
+
     <script type='text/javascript'
         src='https://greenma.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9'
         id='regenerator-runtime-js'></script>

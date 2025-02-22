@@ -389,13 +389,13 @@ Thức ăn thô như ngô, cao lương, cỏ Mombasa và hoa hướng dương gi
 </div>
 <!--  -->
 <div class="sticky-cta">
-    <div id="back-top" href="javascript:void(0)"><i class="fa fa-arrow-up" inert="true"></i></div>
+    <div id="back-top" href="javascript:void(0)"><i class="fa fa-arrow-up" aria-hidden="true"></i></div>
 </div>
 
 
 <script type='text/javascript' src='./js/slick.min.js'></script>
-<script type='text/javascript' src='https://greenma.net/wp-content/themes/Greentech/assets/js/script_slick.js'></script>
-<script type='text/javascript' src='https://greenma.net/wp-content/themes/Greentech/assets/js/script.js'></script>
+<script type='text/javascript' src='./js/script-slick.js'></script>
+<script type='text/javascript' src='./js/asset-script.js'></script>
 
   <style>
     #button-contact-vr {
@@ -621,8 +621,16 @@ Thức ăn thô như ngô, cao lương, cỏ Mombasa và hoa hướng dương gi
       cursor: pointer;
     }
   </style>
-  <div id="button-contact-vr" class="" inert="false">
+  <div id="button-contact-vr" class="" aria-hidden="false">
     <div id="gom-all-in-one">
+      <div id="phone-vr" class="button-contact" onclick="toggleChat()">
+        <div class="phone-vr">
+            <div class="phone-vr-circle-fill"></div>
+            <div class="phone-vr-img-circle">
+                <img src="./image/chatbot.png">
+            </div>
+        </div>
+    </div>
       <div id="zalo-vr" class="button-contact">
         <div class="phone-vr">
           <div class="phone-vr-circle-fill"></div>
@@ -662,6 +670,10 @@ Thức ăn thô như ngô, cao lương, cỏ Mombasa và hoa hướng dương gi
     </div>
     <!-- end v3 class gom-all-in-one -->
   </div>
+  <div id="chatWidget">
+    <i class="fa fa-times close-icon" onclick="hideChatWidget()"></i>
+    <iframe src="./chat.html"></iframe>
+</div>
   <script type='text/javascript' src='https://greenma.net/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
 <script type='text/javascript' src='https://greenma.net/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
 <script type='text/javascript' id='contact-form-7-js-extra'>
