@@ -4567,6 +4567,7 @@
       padding: 0px 50px;
       text-align: center; }
       #product_section5 .item-product .img img {
+        min-height: 225px;
         max-height: 225px; }
     #product_section5 .item-product .content-box-item h3 {
       font-size: 24px;
@@ -4627,8 +4628,8 @@
     .detail-product .content-slider .slider-for .img {
       padding: 0 70px; }
       .detail-product .content-slider .slider-for .img img {
-        max-width: 100%;
-        width: 100%; }
+        max-width: 60%;
+        width: 60%; }
     .detail-product .content-slider .slider-nav {
       max-width: 400px;
       margin: auto;
