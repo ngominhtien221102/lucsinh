@@ -170,28 +170,70 @@
             // Hiển thị tin nhắn người dùng
             appendMessage('user', userInput);
 
+            // Kiểm tra câu hỏi đặc biệt
+            if (userInput.toLowerCase() === "làm sao để cây của tôi ra hoa nhanh hơn?") {
+                const specialResponse = `🌼 1. Điều chỉnh chế độ ánh sáng
+Cây cần đủ ánh sáng, đặc biệt là ánh nắng trực tiếp vào buổi sáng sớm.
+
+Nếu trồng trong nhà, nên thường xuyên xoay hướng cây hoặc mang ra nơi thoáng sáng vài tiếng mỗi ngày.
+
+🌿 2. Hạn chế tưới nước tạm thời (stress nhẹ)
+Giai đoạn trước khi cây ra hoa, bạn có thể giảm lượng nước tưới trong 5–7 ngày để tạo "stress nhẹ" giúp kích thích cơ chế ra hoa.
+
+Tuy nhiên, tránh để cây bị héo úa hoàn toàn.
+
+🧪 3. Cắt tỉa đúng cách
+Cắt bỏ các lá già, cành yếu hoặc cành đã ra hoa trước đó để kích thích mầm hoa mới phát triển.
+
+🧫 4. Bổ sung chất điều hòa sinh trưởng
+Một số cây cần đến chất điều hòa sinh trưởng tự nhiên như Cytokinin hoặc Gibberellin để phân hóa mầm hoa.
+
+Nên dùng kết hợp với phân bón kích hoa chuyên dụng để đạt hiệu quả cao.
+
+🍂 5. Dinh dưỡng – yếu tố quyết định
+Cây muốn ra hoa cần lượng lân (P) và kali (K) cao, trong khi giảm đạm 👎 để tránh phát triển lá quá mức.
+
+Tăng cường vi lượng Bo, Zn, Mg để giúp hoa bền màu, không rụng nụ.
+
+✅ Gợi ý sản phẩm chuyên dụng
+Để đơn giản hóa quy trình chăm sóc mà vẫn đạt hiệu quả cao, bạn nên sử dụng Siêu Kích Hoa của Lục Sinh – sản phẩm phân bón hữu cơ vi sinh chuyên dụng giúp:
+
+Kích thích mầm hoa phát triển đồng loạt, hoa nở to và màu sắc tươi sáng.
+
+Giàu lân – kali – Bo – Zn giúp cây chuyển giai đoạn sinh trưởng nhanh chóng.
+
+An toàn với môi trường và người sử dụng, đặc biệt phù hợp với cây trồng tại nhà, ban công, sân vườn nhỏ.
+
+Không mùi, dễ sử dụng – chỉ cần pha loãng và tưới gốc hoặc phun sương lên lá.
+                `;
+                appendMessageWithAnimation('bot', specialResponse);
+                document.getElementById('userInput').value = '';
+                return;
+            }
+
+            // Nếu không phải câu hỏi đặc biệt, gửi yêu cầu đến API
             try {
                 const response = await fetch(
-                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBuVKfuCZlneeZf8kAgICsYBVdZAxMwvis`,
-                    {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify({
-                            contents: [
-                                {
-                                    parts: [{ text: userInput }]
-                                }
-                            ]
-                        }),
-                    }
+`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBuVKfuCZlneeZf8kAgICsYBVdZAxMwvis`,
+{
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+        contents: [
+            {
+                parts: [{ text: userInput }]
+            }
+        ]
+    }),
+}
                 );
 
                 if (!response.ok) {
-                    console.error(`Error: ${response.status} - ${response.statusText}`);
-                    appendMessage('bot', `Error: ${response.status} - ${response.statusText}`);
-                    return;
+console.error(`Error: ${response.status} - ${response.statusText}`);
+appendMessage('bot', `Error: ${response.status} - ${response.statusText}`);
+return;
                 }
 
                 const data = await response.json();
@@ -207,7 +249,6 @@
 
             document.getElementById('userInput').value = '';
         }
-
 
         function appendMessage(sender, text) {
             const messageDiv = document.createElement('div');
@@ -250,12 +291,12 @@
             let index = 0;
             const interval = setInterval(() => {
                 if (index < text.length) {
-                    textDiv.textContent += text[index];
-                    index++;
+textDiv.textContent += text[index];
+index++;
                 } else {
-                    clearInterval(interval);
+clearInterval(interval);
                 }
-            }, 50); // Tốc độ hiển thị từng ký tự
+            }, 50);
         }
 
         document.getElementById("userInput").addEventListener("keydown", function (event) {
