@@ -3787,7 +3787,7 @@
       bottom: 10px;
       transform: translateX(-50%); }
     #section1 .banner-slider .content-banner {
-      max-width: 1200px;
+      /* max-width: 1200px; */
       padding: 0 15px;
       width: 100%;
       margin: auto;

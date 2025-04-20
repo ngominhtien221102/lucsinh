@@ -275,9 +275,9 @@
     margin-bottom: 0;
 }
 
-#section1 .banner-slider .content-banner{
+/* #section1 .banner-slider .content-banner{
     left: 40%!important;
-}
+} */
 
 @keyframes prixClipFix {
     0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
