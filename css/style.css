@@ -4564,7 +4564,7 @@
     -o-transition: all ease 0.1s;
     transition: all ease 0.1s; }
     #product_section5 .item-product .img {
-      padding: 0px 50px;
+      padding: 0px;
       text-align: center; }
       #product_section5 .item-product .img img {
         min-height: 225px;
