@@ -211,29 +211,64 @@ Không mùi, dễ sử dụng – chỉ cần pha loãng và tưới gốc hoặ
                 return;
             }
 
+            if (userInput.toLowerCase() === "cách trồng hoa giấy hiệu quả?") {
+                const specialResponse = `🌺 **Chọn vị trí trồng**:
+Đặt cây nơi có ít nhất 6–8 giờ ánh sáng mặt trời trực tiếp mỗi ngày.
+Hoa giấy rất ưa sáng, thiếu nắng sẽ khó ra hoa đẹp.
+
+🌱 **Chuẩn bị đất trồng**:
+Sử dụng đất tơi xốp, thoát nước tốt, giàu mùn và hữu cơ.
+Có thể trộn thêm phân hữu cơ hoặc tro trấu, xơ dừa để tăng độ thoáng khí.
+
+🛠️ **Kỹ thuật trồng**:
+Đào hố lớn hơn bầu cây, đặt nhẹ nhàng cây vào hố, lấp đất và nén chặt gốc.
+Tưới nước nhẹ sau khi trồng để cố định bầu đất, nhưng tránh tưới đẫm.
+
+💧 **Chăm sóc ban đầu**:
+Hạn chế tưới nước thường xuyên trong 1–2 tuần đầu để kích thích rễ phát triển tìm nước.
+Khi rễ đã ổn định, duy trì tưới định kỳ 2–3 lần/tuần tùy theo thời tiết.
+
+🌿 **Bón phân**:
+Sau khi cây bén rễ, bón phân định kỳ để thúc đẩy sinh trưởng và ra hoa.
+
+✅ **Khuyến nghị sản phẩm từ Lục Sinh**:
+- **Siêu Kích Rễ Lục Sinh**:
+    - Là phân bón hữu cơ vi sinh chuyên dụng cho giai đoạn sau trồng.
+    - Giúp bộ rễ hoa giấy phát triển nhanh, khỏe mạnh, tăng khả năng hút nước và dinh dưỡng.
+    - Giúp cây sớm phục hồi sau khi trồng và chuẩn bị nền tảng cho ra hoa.
+- **Siêu Kích Hoa Lục Sinh**:
+    - Là sản phẩm chuyên biệt giúp kích thích cây phân hóa mầm hoa mạnh mẽ.
+    - Tăng tỷ lệ đậu hoa, giúp hoa giấy nở rực rỡ, bền màu, đồng loạt.
+    - Giàu lân, kali, và vi lượng Bo, Zn – những dưỡng chất thiết yếu cho giai đoạn ra hoa.`;
+
+                appendMessageWithAnimation('bot', specialResponse);
+                document.getElementById('userInput').value = '';
+                return;
+            }
+
             // Nếu không phải câu hỏi đặc biệt, gửi yêu cầu đến API
             try {
                 const response = await fetch(
-`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBuVKfuCZlneeZf8kAgICsYBVdZAxMwvis`,
-{
-    method: 'POST',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-        contents: [
-            {
-                parts: [{ text: userInput }]
-            }
-        ]
-    }),
-}
+                    `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBuVKfuCZlneeZf8kAgICsYBVdZAxMwvis`,
+                    {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            contents: [
+                                {
+                                    parts: [{ text: userInput }]
+                                }
+                            ]
+                        }),
+                    }
                 );
 
                 if (!response.ok) {
-console.error(`Error: ${response.status} - ${response.statusText}`);
-appendMessage('bot', `Error: ${response.status} - ${response.statusText}`);
-return;
+                    console.error(`Error: ${response.status} - ${response.statusText}`);
+                    appendMessage('bot', `Error: ${response.status} - ${response.statusText}`);
+                    return;
                 }
 
                 const data = await response.json();
@@ -291,12 +326,12 @@ return;
             let index = 0;
             const interval = setInterval(() => {
                 if (index < text.length) {
-textDiv.textContent += text[index];
-index++;
+                    textDiv.textContent += text[index];
+                    index++;
                 } else {
-clearInterval(interval);
+                    clearInterval(interval);
                 }
-            }, 10);
+            }, 5);
         }
 
         document.getElementById("userInput").addEventListener("keydown", function (event) {
